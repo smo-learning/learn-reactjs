@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   render() {
-
+    console.log("ICH RENDER");
     const chars = this.state.textInput.split("");
     const charComps = chars.map((char, index) => {
       return <CharComponent
@@ -32,7 +32,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input type="text" onChange={this.onChangeInput} value={this.textInput} />
+        <input type="text" onChange={this.onChangeInput} value={this.state.textInput} />
         <p>{this.state.textInput.length}</p>
         <ValidationComponent len={this.state.textInput.length} />
         {charComps}
