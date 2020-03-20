@@ -1,11 +1,12 @@
 import React from 'react';
-import classes from './App.module.css';
+import Layout from './hoc/Layout/Layout';
+import TodoBuilder from './containers/TodoBuilder/TodoBuilder';
 
 function App() {
   return (
-    <div className={classes.App}>
-      Hallo
-    </div>
+    <Layout>
+      <TodoBuilder></TodoBuilder>
+    </Layout>
   );
 }
 
