@@ -17,6 +17,10 @@ const BurgerControls = (props) => {
     return (
         <div className={classes.BurgerControls}>
             {controls}
+            <button
+                className={classes.OrderButton}
+                disabled={!props.purchasable}
+                onClick={props.ordered}>ORDER</button>
         </div>
     )
 }
