@@ -14,11 +14,26 @@ export default class BurgerBuilder extends Component {
         }
     }
 
+    addIngredientHandler = (ingredient) => {
+        const curIngredients = { ...this.state.ingredients };
+        curIngredients[ingredient] = curIngredients[ingredient] + 1;
+        this.setState({ ingredients: curIngredients });
+    }
+
+    removeIngredientHandler = (ingredient) => {
+        const curIngredients = { ...this.state.ingredients };
+        curIngredients[ingredient] = curIngredients[ingredient] - 1;
+        this.setState({ ingredients: curIngredients });
+    }
+
     render() {
         return (
             <div>
                 <Burger ingredients={this.state.ingredients}></Burger>
-                <BurgerControls ingredients={this.state.ingredients}></BurgerControls>
+                <BurgerControls
+                    ingredients={this.state.ingredients}
+                    addIngredient={this.addIngredientHandler}
+                    removeIngredient={this.removeIngredientHandler}></BurgerControls>
             </div>
         )
     }

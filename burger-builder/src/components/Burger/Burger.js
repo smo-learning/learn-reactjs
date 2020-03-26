@@ -7,7 +7,7 @@ import classes from './Burger.module.css'
 const Burger = (props) => {
 
     const ingredientsToShow = Object.keys(props.ingredients).map(ing => {
-        const ingredientsForCurType = [...Array(props.ingredients[ing])].map((_, i) => {
+        const ingredientsForCurType = [...Array(Math.max(props.ingredients[ing], 0))].map((_, i) => {
             return <Ingredient key={ing + i} type={ing} />
         })
         return ingredientsForCurType;
